@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internet Speed Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 90%;
+            max-width: 400px;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00796b;
+            margin-bottom: 20px;
+        }
+        .speed {
+            font-size: 48px;
+            font-weight: bold;
+            color: #004d40;
+            margin: 20px 0;
+        }
+        .unit {
+            font-size: 24px;
+            color: #004d40;
+        }
+        .btn {
+            background: #00796b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #004d40;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #757575;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Internet Speed Test</div>
+        <div class="speed" id="speed">0.00 <span class="unit">Mbps</span></div>
+        <button class="btn" onclick="startTest()">Start Test</button>
+        <div class="footer">Powered by HTML, CSS & JS</div>
+    </div>
+
+    <script>
+        function startTest() {
+            const speedElement = document.getElementById('speed');
+
+            // Simulate speed test with random value
+            speedElement.textContent = 'Testing...';
+
+            setTimeout(() => {
+                const randomSpeed = (Math.random() * 100).toFixed(2); // Random speed between 0 and 100 Mbps
+                speedElement.innerHTML = `${randomSpeed} <span class="unit">Mbps</span>`;
+            }, 2000); // Simulate a delay of 2 seconds for the test
+        }
+    </script>
+</body>
+</html>
